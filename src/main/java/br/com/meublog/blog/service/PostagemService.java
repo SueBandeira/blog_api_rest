@@ -21,7 +21,7 @@ public class PostagemService {
 
   public Postagem buscar(int id) {
     Optional<Postagem> obj = repo.findById(id);
-    return obj.orElseThrow(() -> new ObjetoNaoEncontrado("Objeto não encontrado! Id: " + id + ", Tipo: " + Postagem.class.getName()));
+    return obj.orElse(null);
   }
 
   public Postagem salvar(Postagem obj) {
